@@ -1,5 +1,5 @@
-let x = 100;
-let y = 200;
+let x = 0;
+let y = 150;
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -12,6 +12,8 @@ function setup() {
 function draw() {
   background(220);
   drawBat(x, y);
+  drawPig(200, 350);
+  x = x + 1;
 }
 
 function drawBat(x, y) {
@@ -58,4 +60,32 @@ function drawBat(x, y) {
   ellipse(15, -30, 5, 5);
   //eyes
   //creature
+  pop();
+}
+function drawPig(xp, yp) {
+  push();
+  translate(xp, yp);
+  stroke(0);
+  strokeWeight(1.5);
+  fill(255, 182, 193);
+  ellipse(-50, 0, 50, 100); //back leg
+  ellipse(50, 0, 50, 100); //front leg
+  ellipse(0, -50, 200, 120); //body
+  ellipse(100, -75, 100); //head
+  triangle(95, -135, 90, -124, 100, -125); //left ear
+  triangle(110, -135, 105, -125, 115, -123); //right ear
+  fill(0);
+  ellipse(87, -90, 7); //left eye
+  ellipse(113, -90, 7); //right eye
+  noFill();
+  ellipse(100, -75, 20, 15); //nose
+  fill(0);
+  ellipse(95, -75, 4); //left nostril
+  ellipse(105, -75, 4); //right nostril
+  noFill();
+  arc(100, -60, 50, 25, 0, PI); //smile
+  strokeWeight(4);
+  arc(-105, -50, 10, 10, 0, (6 * PI) / 4); //tail
+  arc(-105, -60, 10, 10, (3 * PI) / 2, PI / 2); //tail
+  pop();
 }
