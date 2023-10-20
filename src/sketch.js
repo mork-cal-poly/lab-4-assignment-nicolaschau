@@ -1,5 +1,6 @@
 let x = 0;
 let y = 150;
+let r = 0;
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -13,6 +14,9 @@ function draw() {
   background(220);
   drawBat(x, y);
   drawPig(200, 350);
+  if (x > 200) {
+    r = r + 0.05;
+  }
   x = x + 1;
 }
 
@@ -65,6 +69,7 @@ function drawBat(x, y) {
 function drawPig(xp, yp) {
   push();
   translate(xp, yp);
+  rotate(r);
   stroke(0);
   strokeWeight(1.5);
   fill(255, 182, 193);
