@@ -11,10 +11,10 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  drawBackground();
   drawBat(x, y);
   drawPig(200, 350);
-  if (x > 200) {
+  if (x > width / 2) {
     r = r + 0.05;
   }
   x = x + 1;
@@ -93,4 +93,22 @@ function drawPig(xp, yp) {
   arc(-105, -50, 10, 10, 0, (6 * PI) / 4); //tail
   arc(-105, -60, 10, 10, (3 * PI) / 2, PI / 2); //tail
   pop();
+}
+
+function drawBackground() {
+  background(100, 225, 253);
+  fill(0, 255, 0);
+  noStroke();
+  rect(0, (3 * height) / 4, width, height / 4);
+  fill(255, 255, 0);
+  ellipse(0, 0, 200); //sun
+  fill(255);
+  ellipse(200, 50, 100, 50); //cloud
+  ellipse(200, 25, 60, 40); //cloud
+  ellipse(325, 50, 100, 50); //cloud
+  ellipse(325, 25, 60, 40); //cloud
+  fill(150, 75, 0);
+  rect(50, 200, 50, 100);
+  fill(1, 200, 32);
+  ellipse(75, 180, 125, 100);
 }
