@@ -1,6 +1,7 @@
 let x = 0;
 let y = 150;
 let r = 0;
+let click = false;
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -17,7 +18,9 @@ function draw() {
   if (x > width / 2) {
     r = r + 0.05;
   }
-  x = x + 1;
+  if (click) {
+    x = x + 1;
+  }
 }
 
 function drawBat(x, y) {
@@ -111,4 +114,9 @@ function drawBackground() {
   rect(50, 200, 50, 100);
   fill(1, 200, 32);
   ellipse(75, 180, 125, 100);
+}
+
+function mouseClicked() {
+  if (mouseX > 0 && mouseX < 37.5 && mouseY > 90 && mouseY < 210)
+    click = !click;
 }
