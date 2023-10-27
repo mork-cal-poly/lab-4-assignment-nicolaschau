@@ -110,6 +110,7 @@ function drawBackground() {
   ellipse(200, 25, 60, 40); //cloud
   ellipse(325, 50, 100, 50); //cloud
   ellipse(325, 25, 60, 40); //cloud
+  drawBear(46, 240, 0.2);
   fill(150, 75, 0);
   rect(50, 200, 50, 100);
   fill(1, 200, 32);
@@ -125,3 +126,50 @@ function mouseClicked() {
   )
     click = !click;
 } //if the bat's body is clicked the bat will move
+function drawBear(x, y, s) {
+  push();
+  translate(x, y);
+  scale(s);
+  //creature
+  push();
+  translate(200, 250);
+  //legs
+  fill(79, 34, 0);
+  noStroke();
+  quad(-107, 40, -94, -40, -63, -20, -87, 50);
+  quad(-35, 50, -50, -20, -20, -25, -15, 43);
+  quad(25, 45, 33, -25, 65, -23, 45, 50);
+  quad(65, -23, 85, -35, 110, 0, 90, 10);
+  quad(110, 0, 120, 15, 85, 37, 80, 18);
+  //body
+  ellipse(0, -60, 210, 115);
+  //nose
+  push();
+  rotate(PI / 14);
+  fill(0, 0, 0);
+  noStroke();
+  ellipse(120, -77, 57, 30);
+  pop();
+  //head
+  push();
+  scale(1.2);
+  fill(79, 34, 0);
+  stroke(0);
+  strokeWeight(0.15);
+  quad(0 + 72, 0 - 35, 0 + 72, -47 - 35, 55 + 72, -20 - 35, 50 + 72, 10 - 35);
+  pop();
+  //face
+  //eye
+  fill(189, 21, 2);
+  noStroke();
+  triangle(0 + 135, 0 - 60, 6 + 135, -5 - 60, -8 + 135, -12 - 60);
+  //ear
+  push();
+  fill(176, 73, 0);
+  noStroke();
+  rotate(PI / 3.7);
+  ellipse(2, -129, 14, 9);
+  pop();
+  pop();
+  pop();
+}
