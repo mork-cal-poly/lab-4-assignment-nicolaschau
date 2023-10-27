@@ -117,6 +117,11 @@ function drawBackground() {
 }
 
 function mouseClicked() {
-  if (mouseX > 0 && mouseX < 37.5 && mouseY > 90 && mouseY < 210)
+  if (
+    mouseX > x - 37.5 &&
+    mouseX < x + 37.5 &&
+    mouseY > y - 150 &&
+    mouseY < y + 150
+  )
     click = !click;
 }
