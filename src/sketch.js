@@ -124,4 +124,4 @@ function mouseClicked() {
     mouseY < y + 150
   )
     click = !click;
-}
+} //if the bat's body is clicked the bat will move
