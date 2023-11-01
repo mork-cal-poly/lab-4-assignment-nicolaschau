@@ -121,8 +121,8 @@ function mouseClicked() {
   if (
     mouseX > x - 37.5 &&
     mouseX < x + 37.5 &&
-    mouseY > y - 150 &&
-    mouseY < y + 150
+    mouseY > y - 60 &&
+    mouseY < y + 60
   )
     click = !click;
 } //if the bat's body is clicked the bat will move
